@@ -1,0 +1,18 @@
+<div class= row>
+  <div class=col-xs-12>
+	  <table class="table">
+		  <thead>
+		  	<tr>
+		  		<th>title</th>
+		  		<th>opnion</th>
+		  	</tr>
+		  </thead>
+		  <tbody>
+		    <% books.each do |book| %>
+		  	    <td><%= link_to book.title, book, class: "book_#{book.id}" %></td>
+		  	    <td><%= book.body %></td>
+		  	<% end %>
+		  </tbody>
+	  </table>
+  </div>
+</div>

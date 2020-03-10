@@ -7,6 +7,14 @@
 
 		<h2>New book</h2>
 		<%= render 'books/newform', book: @book %>
+		<% if @book.errors.any? %>
+			<h3><%= @book.errors.count %>error occurrence</h3><!--エラーメッセ-->
+			<ul>
+				<% @book.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+				<% end %>
+			</ul>
+		<% end %>
 
 	</div>
 
@@ -45,12 +53,11 @@
 					  <li>
 					    <%= link_to book_favorite_path(book), method: :post do %>
 					      <i class="fa fa-heart" aria-hidden="true"></i>
-					      
 					      <%= book.favorites.count %> いいね
 					    <% end %>
 					  </li>
 					<% end %>
-				　　</td>
+				　  </td>
 				</tr>
 				<% end %>
 			</tbody>

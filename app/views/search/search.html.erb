@@ -1,0 +1,7 @@
+<% if @select == 'user' %>
+  <h3>Users search for  "<%= @search %>"</h3>
+  <%= render 'users/index', users: @records %>
+<% else @select == 'books' %>
+  <h3>Books search for '<%= @search %>'</h3>
+  <%= render 'books/index', books: @records %>
+<% end %>
