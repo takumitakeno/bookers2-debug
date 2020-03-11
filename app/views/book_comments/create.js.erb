@@ -1,0 +1,5 @@
+// #coments_areaで更新する箇所を特定。@book.idで本はたくさんあるため、どの本の変更するのかを特定する。
+// 後ろに変更する箇所のパーシャルをわたしてあげる。
+$("#comments_area_<%= @book.id %>").html("<%= j(render 'book_comments/book_comments_index', book_comments: @book_comments) %>")
+// 入力ホームをからにする記述
+$('textarea').val('')
