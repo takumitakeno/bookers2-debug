@@ -70,4 +70,6 @@ gem 'jquery-rails'
 gem 'byebug'
 gem "pry-rails"
 gem 'font-awesome-rails'
-
+gem 'jp_prefecture'
+gem 'dotenv-rails'
+gem 'geocoder'

@@ -6,6 +6,8 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type=“text/javascript” src=“//code.jquery.com/jquery-2.1.0.min.js”></script>
+    <script type=“text/javascript” src=“//jpostal-1006.appspot.com/jquery.jpostal.js”></script>
   </head>
 
   <body>
@@ -32,13 +34,12 @@
             <% end %>
           </ul>
         </nav>
-
       </div>
     </header>
     <!--ヘッダーの記述-->
     <div class="container">
-      <p id="notice"><%= notice %></p> <!--デバイスでnotice設定されているので呼び出してるだけ-->
       <div class="row">
+      <p id="notice"><%= notice %></p> <!--デバイスでnotice設定されているので呼び出してるだけ-->
         <div class="col-xs-4 col-xs-offset-4">
         <% if user_signed_in? %>
         <!-- パラメータの中に値を入れてコントローラ へ -->
@@ -46,9 +47,9 @@
             <%= text_field_tag :search %>
             <%= select_tag :select,options_for_select({"User" => "user", "Book" => "book"})%>
             <%= select_tag :kind, options_for_select({ "完全一致" => "match", "前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partical" }) %>
-            <%= submit_tag "検索" %> 
+            <%= submit_tag "検索" %>
           <% end %>
-        <% end %> 
+        <% end %>
         </div>
       </div>
     <%= yield %>
